@@ -2,7 +2,6 @@
 using Jogo_de_Xadrez;
 using tabuleiro;
 using xadrez;
-using Xadrez;
 
 namespace JogoDeXadrez
 {
@@ -10,11 +9,21 @@ namespace JogoDeXadrez
     {
         static void Main(string[] args) 
         {
-            PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+            try
+            {
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Console.WriteLine(pos);
+                tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
+                tab.ColocarPeca(new Torre(Cor.Preta, tab), new Posicao(1, 3));
+                tab.ColocarPeca(new Rei(Cor.Preta, tab), new Posicao(2, 4));
+                tab.ColocarPeca(new Torre(Cor.Branca, tab), new Posicao(3, 5));
 
-            Console.WriteLine(pos.ToPosicao());
+                Tela.ImprimirTabuleiro(tab);
+            }
+            catch (TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
