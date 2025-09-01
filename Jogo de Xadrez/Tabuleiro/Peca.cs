@@ -1,4 +1,4 @@
-﻿namespace JogoDeXadrez.tabuleiro
+﻿namespace tabuleiro
 {
     class Peca
     {

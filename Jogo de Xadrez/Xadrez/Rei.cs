@@ -1,6 +1,6 @@
-﻿using JogoDeXadrez.tabuleiro;
+﻿using tabuleiro;
 
-namespace JogoDeXadrez.Xadrez
+namespace xadrez
 {
     class Rei : Peca
     {
