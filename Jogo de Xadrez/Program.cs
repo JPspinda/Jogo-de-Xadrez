@@ -1,4 +1,5 @@
 ﻿using System;
+using Jogo_de_Xadrez;
 using JogoDeXadrez.tabuleiro;
 
 namespace JogoDeXadrez
@@ -8,6 +9,8 @@ namespace JogoDeXadrez
         static void Main(string[] args)
         {
             Tabuleiro tab = new Tabuleiro(8, 8);
+
+            Tela.ImprimirTabuleiro(tab);
         }
     }
 }
