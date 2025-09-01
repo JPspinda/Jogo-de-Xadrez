@@ -14,5 +14,10 @@
             Tabuleiro = tabuleiro;
             QndMovimentos = 0;
         }
+
+        public void IncrementarQndMovimentos()
+        {
+            QndMovimentos++;
+        }
     }
 }
