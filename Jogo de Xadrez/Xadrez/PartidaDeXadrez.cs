@@ -6,15 +6,15 @@ namespace Xadrez
     internal class PartidaDeXadrez
     {
         public Tabuleiro Tab { get; private set; }
-        private int Turno { get; set; }
-        private Cor JogadorAtual { get; set; }
+        private int _turno { get; set; }
+        private Cor _jogadorAtual { get; set; }
         public bool Terminada { get; private set; }
 
         public PartidaDeXadrez()
         {
             Tab = new Tabuleiro(8, 8);
-            Turno = 1;
-            JogadorAtual = Cor.Branca;
+            _turno = 1;
+            _jogadorAtual = Cor.Branca;
             Terminada = false;
             ColocarPecas();
         }
