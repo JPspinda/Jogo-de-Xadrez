@@ -43,5 +43,9 @@
         {
             QndMovimentos++;
         }
+        public void DecrementarQndMovimentos()
+        {
+            QndMovimentos--;
+        }
     }
 }
