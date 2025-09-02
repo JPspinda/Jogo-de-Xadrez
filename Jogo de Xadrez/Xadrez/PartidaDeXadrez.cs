@@ -1,4 +1,5 @@
-﻿using tabuleiro;
+﻿using System.Net.Http.Headers;
+using tabuleiro;
 using xadrez;
 
 namespace Xadrez
@@ -32,6 +33,30 @@ namespace Xadrez
             ExecutaMovimento(origem, destino);
             Turno++;
             _mudaJogador();
+        }
+
+        public void ValidarPosicaoDeOrigem(Posicao pos)
+        {
+            if (Tab.Pecas(pos) == null)
+            {
+                throw new TabuleiroException("Não existe peça na posição de origem escolhida!");
+            }
+            if (JogadorAtual != Tab.Pecas(pos).Cor)
+            {
+                throw new TabuleiroException("A peça de origem escolhida não é sua!");
+            }
+            if (!Tab.Pecas(pos).ExisteMovimentosPossiveis())
+            {
+                throw new TabuleiroException("Não há movimentos possíveis para a peça de origem escolhida!");
+            }
+        }
+
+        public void ValidarPosicaoDeDestino(Posicao origem, Posicao destino)
+        {
+            if (!Tab.Pecas(origem).PodeMoverPara(destino))
+            {
+                throw new TabuleiroException("Posição de destino inválida!");
+            }
         }
 
         private void _mudaJogador()
